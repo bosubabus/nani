@@ -2,7 +2,6 @@
 FROM maven AS buildstage
 RUN mkdir /opt/bosubabus
 WORKDIR /opt/bosubabus
-COPY . .
 RUN mvn clean install
 
 EXPOSE 8080
@@ -62,3 +61,9 @@ EXPOSE 8080
         </plugins>
     </build>
 </project>
+
+<html>
+<body>
+        <h1 style="color: green; font-size: 40px;" align="left"> Mind Circuit Training Institute - We don't just train people; we COACH, MENTOR, and BUILD PEOPLE | </h1>
+</body>
+</html>
