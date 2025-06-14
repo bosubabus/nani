@@ -1,8 +1,6 @@
-##artifact build stage
-FROM maven AS buildstage
-RUN mkdir /opt/bosubabus
-WORKDIR /opt/bosubabus
-COPY . .
-RUN mvn clean install
-
-EXPOSE 8080
+stage('Docker Image') {
+            steps {
+                echo 'Docker Image building'
+                sh 'docker build -t devopshubg333/batch13:${BUILD_NUMBER} .'
+            }
+        }
