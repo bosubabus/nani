@@ -1,5 +1,8 @@
-FROM python:3.11-slim
-WORKDIR /app
+##artifact build stage
+FROM maven AS buildstage
+RUN mkdir /opt/bosubabus
+WORKDIR /opt/bosubabus
 COPY . .
-RUN pip install --no-cache-dir -r django
-CMD ["python", "app.py"]
+RUN mvn clean install
+
+EXPOSE 8080
