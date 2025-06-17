@@ -1,5 +1,5 @@
 FROM python:3.11-slim
 WORKDIR /app
 COPY . .
-RUN pip install --no-cache-dir
+RUN pip install --no-cache-dir -r django
 CMD ["python", "app.py"]
