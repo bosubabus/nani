@@ -1,8 +1,5 @@
-##artifact build stage
-FROM maven AS buildstage
-RUN mkdir /opt/bosubabus
-WORKDIR /opt/bosubabus
+FROM python:3.11-slim
+WORKDIR /app
 COPY . .
-RUN mvn clean install
-
-EXPOSE 8080
+RUN pip install --no-cache-dir -r requirements.txt
+CMD ["python", "app.py"]
